@@ -777,9 +777,11 @@ export class ImageCropper extends ImageCropperModel {
 
         if (this.cropperSettings.preserveSize) {
             //var left = Math.max(Math.round((bounds.left) / this.ratioW - offsetW), 0) * this.srcImage.width / this.canvas.width;
-            var width = Math.max(Math.round((bounds.right) / this.ratioW - offsetW), 0) * this.srcImage.width / this.canvas.width;
+            //var width = Math.max(Math.round((bounds.right) / this.ratioW - offsetW), 0) * this.srcImage.width / this.canvas.width;
+            var width = Math.round(bounds.width / this.ratioW);
             //var top = Math.max(Math.round((bounds.top) / this.ratioH - offsetH), 0) * this.srcImage.height / this.canvas.height;
-            var height = Math.max(Math.round((bounds.bottom) / this.ratioH - offsetH), 0) * this.srcImage.height / this.canvas.height;
+            //var height = Math.max(Math.round((bounds.bottom) / this.ratioH - offsetH), 0) * this.srcImage.height / this.canvas.height;
+            var height = Math.round(bounds.height / this.ratioH);
 
 
             this.cropCanvas.width = width;
